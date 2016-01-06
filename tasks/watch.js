@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
   var fs = require('fs');
   var path = require('path');
-  var tinylr = require('tiny-lr-fork');
+  var tinylr = require('tiny-lr');
   var semver = require('semver');
 
   var RESTART_WATCHERS_DEBOUNCE = 10;
@@ -212,8 +212,8 @@ module.exports = function(grunt) {
   var onFileChange = function(filepath) {
     var minimatchOptions = {
       dot: true,
-      matchBase: true, 
-      nocomment: true, 
+      matchBase: true,
+      nocomment: true,
       nonegate: true
     };
     if (grunt.file.isMatch(minimatchOptions, options.ignoredFiles, filepath))
